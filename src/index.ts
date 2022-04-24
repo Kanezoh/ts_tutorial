@@ -111,3 +111,27 @@ let numbers = {
         }
     }
 }
+
+// call signature
+type Greet = (name: string) => string
+
+type Log = (message: string, userId?: string) => void
+
+type SumVariadicSafe = (...numbers: number[]) => number
+
+let newLog : Log = (
+    message,
+    userId = 'Not signed in'
+) => {
+    let time = new Date().toISOString()
+    console.log(time, message, userId)
+}
+
+function times(
+    f: (index: number) => void,
+    n: number
+) {
+    for (let i = 0; i < n; i++) {
+        f(i)
+    }
+}
