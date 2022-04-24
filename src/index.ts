@@ -95,3 +95,19 @@ console.log(fibonacciGenrator.next())
 console.log(fibonacciGenrator.next())
 console.log(fibonacciGenrator.next())
 console.log(fibonacciGenrator.next())
+
+function* createNumbers(): IterableIterator<number> {
+    let n = 0
+    while(1) {
+        yield n++
+    }
+}
+
+// Iterator
+let numbers = {
+    *[Symbol.iterator]() {
+        for(let n = 1; n<=10;n++) {
+            yield n
+        }
+    }
+}
