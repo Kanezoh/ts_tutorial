@@ -75,3 +75,23 @@ function fancyDate(this: Date) {
     return this.getDate()
 }
 fancyDate.call(new Date)
+
+function* createFibonacciGenerator() {
+    let a = 0
+    let b = 1
+    while(true) {
+        yield a;
+        [a,b] = [b, a+b]
+    }
+}
+
+let fibonacciGenrator = createFibonacciGenerator()
+console.log(fibonacciGenrator.next())
+console.log(fibonacciGenrator.next())
+console.log(fibonacciGenrator.next())
+console.log(fibonacciGenrator.next())
+console.log(fibonacciGenrator.next())
+console.log(fibonacciGenrator.next())
+console.log(fibonacciGenrator.next())
+console.log(fibonacciGenrator.next())
+console.log(fibonacciGenrator.next())
