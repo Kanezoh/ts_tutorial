@@ -135,3 +135,40 @@ function times(
         f(i)
     }
 }
+
+
+// Overloaded Function Types
+// shorhand call signature
+//type Log = (message: string, userId?: string) => void
+
+// full call signature
+//type Log = {
+//    (message: string, userId?: string): void
+//}
+
+//type Reserve = {
+//    (from: Date, to: Date, destination: string): Reservation
+//    (from: Date, destination: string): Reservation
+//}
+//
+//let reserve: Reserve = (
+//    from: Date,
+//    toOrDestination: Date | String,
+//    destination?: string
+//) => {
+//    //
+//}
+
+type WarnUser = {
+    (warning: string): void
+    wasCalled: boolean
+}
+
+//let warnUser: WarnUser = (warning: string) => {
+//    if (warnUser.wasCalled) {
+//        return
+//    }
+//    warnUser.wasCalled = true
+//    console.log(warning)
+//}
+//warnUser.wasCalled = false
